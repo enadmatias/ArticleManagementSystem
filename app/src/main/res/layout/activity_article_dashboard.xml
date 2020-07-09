@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:orientation="vertical"
+    tools:context=".Activity.ArticleDashboard">
+
+
+    <EditText
+        android:id="@+id/editText_articleTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Article Title" />
+
+    <EditText
+        android:id="@+id/editText_articleArea"
+        android:layout_below="@id/editText_articleTitle"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/layout_edittext_rounded"
+        android:backgroundTint="@color/colorIvory"
+        android:ems="10"
+        android:padding="10dp"
+        android:inputType="text|textMultiLine"
+        android:nestedScrollingEnabled="true"
+        android:hint="Write an article"
+        android:gravity="start|top"
+         />
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_articleArea"
+        android:paddingTop="10dp"
+        android:orientation="horizontal">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentLeft="true">
+        <ImageView
+            android:id="@+id/imageView_attach"
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@drawable/ic_attach" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/colorTeal"
+            android:layout_marginTop="1dp"
+            android:textSize="12sp"
+            android:text="Attach File" />
+
+        <ImageView
+            android:id="@+id/imageView_Thumbnail"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+           <EditText
+               android:id="@+id/editTxt_nameOfpic"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:ems="10"
+               android:textSize="10sp"
+               android:inputType="textPersonName"
+               android:hint="Name of the Image" />
+       </LinearLayout>
+        <Button
+            android:id="@+id/btn_Post"
+            android:background="@drawable/layout_edittext_rounded"
+            android:textColor="@color/colorTeal"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="15sp"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:text="POST" />
+       </RelativeLayout>
+
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_below="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/recyclerView"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</RelativeLayout>

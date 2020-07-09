@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ArticleManagementSystem</string>
+    <string name="title_activity_landing">LandingActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="show">More information</string>
+    <string name="hide">Less information</string>
+</resources>
